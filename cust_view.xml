@@ -1,0 +1,29 @@
+<openerp>
+    <data>
+ <!-- customers -->
+    <record model="ir.ui.view" id="res_partner_form_inherit">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+        <field name='phone' position='after'>
+                   <field name="phone_sec" />
+        </field>
+            </field>
+       </record>
+
+    <record model="ir.ui.view" id="res_partnet_tree_inherit">
+         <field name="name">res.partner.tree.inherit</field>
+         <field name="model">res.partner</field>
+         <field name="type">tree</field>
+         <field name="inherit_id" ref="res.partner_tree"/>
+         <field name="arch" type="xml">
+        <field name='phone' position='after'>
+                   <field name="phone_sec" />
+              </field>
+         </field>
+     </record>
+
+
+    </data>
+</openerp
