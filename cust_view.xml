@@ -6,24 +6,50 @@
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
-        <field name='phone' position='after'>
-                   <field name="phone_sec" />
+	
+	<field name='phone' position='after'>
+                   <field name="phone_sec"/>
+       </field>
+	
+	<field name='country_id' position='before'>
+   		<field name="pobox" placeholder="POBOX"/>
+        
         </field>
-            </field>
-       </record>
 
-    <record model="ir.ui.view" id="res_partnet_tree_inherit">
-         <field name="name">res.partner.tree.inherit</field>
-         <field name="model">res.partner</field>
-         <field name="type">tree</field>
-         <field name="inherit_id" ref="res.partner_tree"/>
-         <field name="arch" type="xml">
-        <field name='phone' position='after'>
-                   <field name="phone_sec" />
-              </field>
-         </field>
+	<field name='website' position='before'>
+   		<field name="company_type" attrs="{'invisible': [('is_company','=',False)]}"/>
+		
+       </field>
+        
+	<field name='email' position='after'>
+   		<field name="email_sec" widget="email"/>
+       </field>
+
+	<field name='website' position='after'>
+   		<field name="equasis" widget="url" attrs="{'invisible': [('is_company','=',False)]}"/>
+       </field>
+	
+	<field name='company_type' position='after'>
+   		<field name="industry" attrs="{'invisible': [('is_company','=',False)]}"/>
+	</field>
+	
+	<field name='title' position='after'>
+   		<field name="fleet_size" attrs="{'invisible': [('is_company','=',False)]}"/>
+       </field>
+
+        <field name='title' position='after'>
+   		<field name="imo_num" attrs="{'invisible': [('is_company','=',False)]}"/>
+        </field> 
+
+	<field name='title' position='after'>
+   		<field name="dnv_num" attrs="{'invisible': [('is_company','=',False)]}"/>
+        </field> 
+	
+	     
+     </field>
+    
      </record>
 
+     </data>
 
-    </data>
-</openerp
+</openerp>
